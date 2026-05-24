@@ -1,4 +1,4 @@
-# historyquizbot
+# @historyyquizbot
 # 🏛 History Quiz Telegram Mini App
 
 Интерактивная ретро-викторина по историческим личностям, выполненная в стиле пиксельных аркадных игр.
