@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Историческая Викторина</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<div class="app">
+
+  <div id="start-screen" class="screen active">
+
+    <h1>ИСТОРИЧЕСКАЯ<br>ВИКТОРИНА</h1>
+
+    <div class="subtitle">УГАДАЙ ДЕЯТЕЛЯ<br>ПО ФАКТАМ</div>
+
+    <input
+      type="text"
+      id="nickname-input"
+      maxlength="14"
+      placeholder="ВВЕДИ НИК"
+      class="nickname-input"
+    />
+
+    <div class="difficulty-selector">
+
+      <button class="btn difficulty-btn"
+        onclick="selectDifficulty('easy', this)">
+        легкий
+        <span>5 ЖИЗНЕЙ</span>
+      </button>
+
+      <button class="btn difficulty-btn"
+        onclick="selectDifficulty('medium', this)">
+        средний
+        <span>3 ЖИЗНИ</span>
+      </button>
+
+      <button class="btn difficulty-btn"
+        onclick="selectDifficulty('hard', this)">
+        сложный
+        <span>1 ЖИЗНЬ</span>
+      </button>
+
+    </div>
+
+    <button id="start-btn" class="btn" disabled onclick="startGame()">
+      НАЧАТЬ ИГРУ
+    </button>
+
+    <div class="hint" id="difficulty-hint">ВЫБЕРИ РЕЖИМ</div>
+
+  </div>
+
+  <div id="game-screen" class="screen">
+
+    <div class="lives" id="lives-display"></div>
+
+    <div class="question-text" id="question-text"></div>
+
+    <div class="options" id="options-container"></div>
+
+    <div class="info-panel" id="info-panel">
+
+      <div class="info-header">
+        <img id="info-image" src="" alt="portrait" />
+        <div>
+          <div class="name" id="info-name"></div>
+          <div class="years" id="info-years"></div>
+        </div>
+      </div>
+
+      <div class="info-facts" id="info-facts"></div>
+
+      <button class="btn" id="next-btn" onclick="nextQuestion()">ДАЛЕЕ</button>
+
+    </div>
+
+    <div class="counter">
+      ВОПРОС <span id="current-q">1</span> / <span id="total-q">10</span>
+    </div>
+
+  </div>
+
+  <div id="result-screen" class="screen">
+
+    <h1>РЕЗУЛЬТАТ</h1>
+
+    <div class="result" id="final-score"></div>
+
+    <div class="leaderboard">
+
+      <div class="leaderboard-title">ЛИДЕРБОРД</div>
+
+      <table>
+        <tbody id="leaderboard-body"></tbody>
+      </table>
+
+    </div>
+
+    <button class="btn" onclick="restartGame()">СЫГРАТЬ СНОВА</button>
+
+  </div>
+
+</div>
+<audio id="sound-correct" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a5d5b5.mp3?filename=correct-2-46134.mp3"></audio>
+<audio id="sound-wrong" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_b0c9b1c0d2.mp3?filename=wrong-2-46134.mp3"></audio>
+<audio id="sound-click" src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_7b5b7c3c1d.mp3?filename=click-124467.mp3"></audio>
+<audio id="sound-end" src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_c1c2c1.mp3?filename=retro-game-over-81321.mp3"></audio>
+<script src="script.js"></script>
+
+</body>
+</html>
